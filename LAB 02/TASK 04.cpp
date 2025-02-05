@@ -1,36 +1,40 @@
 #include <iostream>
-#include <vector>
 using namespace std;
 
 int main() {
-    int stringCount;
+    int totalStrings;
     cout << "Enter the number of strings: ";
-    cin >> stringCount;
+    cin >> totalStrings;
 
-    vector<string> strList(stringCount);
+    string *dynamicStrings = new string[totalStrings];
 
-    for (int i = 0; i < stringCount; i++) {
+    for (int i = 0; i < totalStrings; i++) {
         cout << "Enter string " << i + 1 << ": ";
-        cin >> strList[i];
+        cin >> dynamicStrings[i];
     }
 
-    
-    for (int i = 0; i < stringCount - 1; i++) {
+    for (int i = 0; i < totalStrings - 1; i++) {
         int minIndex = i;
-        for (int j = i + 1; j < stringCount; j++) {
-            if (strList[j][0] < strList[minIndex][0]) {
+        for (int j = i + 1; j < totalStrings; j++) {
+            if (dynamicStrings[j][0] < dynamicStrings[minIndex][0]) {
                 minIndex = j;
             }
         }
+        
         if (minIndex != i) {
-            swap(strList[i], strList[minIndex]);
+            string temp = dynamicStrings[i];
+            dynamicStrings[i] = dynamicStrings[minIndex];
+            dynamicStrings[minIndex] = temp;
         }
     }
 
     cout << "Sorted strings:" << endl;
-    for (const auto& str : strList) {
-        cout << str << endl;
+
+    for (int i = 0; i < totalStrings; i++) {
+        cout << dynamicStrings[i] << endl;
     }
+
+    delete[] dynamicStrings;
 
     return 0;
 }
