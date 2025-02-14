@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+
+
+class Car{
+
+    public :
+        string brand[100];
+        string model[100];
+        double price[100];
+        bool availability[100];
+        int count=0;
+
+     Car(string bran,string mode,double pric){
+                brand[count]=bran;
+                model[count]=mode;
+                price[count]=pric;
+                count++;
+        }
+
+    void update
+    void rentalrequest(string bran,string mode){
+        for(int i=0;i<count;i++){
+            if(brand[i]==bran && model[i]==mode){
+                if(availability[i]==true){
+                    cout<<bran<<cout<<" is available for rent"<<endl;
+                }
+                else{
+                    cout<<bran<<mode<<"is not available for rent"<<endl;
+                }
+            }
+            else{
+                cout<<"we don't rent this car "<<endl;
+            }
+        }
+        
+    }
+
+}
+
+int main(){
+    return 0;
+}
