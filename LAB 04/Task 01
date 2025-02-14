@@ -10,15 +10,28 @@ class Car{
         double price[100];
         bool availability[100];
         int count=0;
+    
+    Car(){
+        brand[count]="Unknown";
+        model[count]="generic";
+        price[count]=0.0;
+        availability[count]=true;
+    }
 
-     Car(string bran,string mode,double pric){
+    Car(string bran,string mode,double pric,bool available){
                 brand[count]=bran;
                 model[count]=mode;
                 price[count]=pric;
+                availability[count]=true;
                 count++;
         }
 
-    void update
+    
+    void update(string bran,string mode,double pric){
+        
+
+    }
+
     void rentalrequest(string bran,string mode){
         for(int i=0;i<count;i++){
             if(brand[i]==bran && model[i]==mode){
@@ -36,6 +49,11 @@ class Car{
         
     }
 
+}
+
+int main(){
+    return 0;
+}
 }
 
 int main(){
