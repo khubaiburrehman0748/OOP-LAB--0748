@@ -1,61 +1,67 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
 
 class Car{
 
     public :
-        string brand[100];
-        string model[100];
-        double price[100];
-        bool availability[100];
+        string brand;
+        string model;
+        double price;
+        bool availability;
         int count=0;
     
     Car(){
-        brand[count]="Unknown";
-        model[count]="generic";
-        price[count]=0.0;
-        availability[count]=true;
+        brand="Unknown";
+        model="generic";
+        price=0.0;
+        availability=true;
+        count++;
     }
 
-    Car(string bran,string mode,double pric,bool available){
-                brand[count]=bran;
-                model[count]=mode;
-                price[count]=pric;
-                availability[count]=true;
-                count++;
+    Car(string brand,string model,double price){
+            this->brand=brand;
+            this->model=model;
+            this->price=price;
+            availability=true;
+            count++;
         }
 
-    
-    void update(string bran,string mode,double pric){
-        
-
-    }
-
-    void rentalrequest(string bran,string mode){
-        for(int i=0;i<count;i++){
-            if(brand[i]==bran && model[i]==mode){
-                if(availability[i]==true){
-                    cout<<bran<<cout<<" is available for rent"<<endl;
-                }
-                else{
-                    cout<<bran<<mode<<"is not available for rent"<<endl;
-                }
-            }
-            else{
-                cout<<"we don't rent this car "<<endl;
-            }
+    void update(string newbrand,string newmodel,double newprice){
+            this->brand=newprice;
+            this->model=newmodel;
+            this->price=newprice;
         }
-        
+
+    void rentalrequest(){
+        if(availability){
+            availability=false;
+            cout<<brand<<" "<<model<< " has been rented succesfully "<<endl;
+        }
+        else {
+            cout<<brand<<" "<<model<< " has already rented out "<<endl;
+        }
     }
 
-}
+    void checkavailability(){
+        if(availability){
+            cout<<brand<<" "<<model<< " is available for rent "<<endl;
+        }
+        else{
+            cout<<brand<<" "<<model<< " is not available for rent "<<endl;
+        }
+    }
+};
 
 int main(){
-    return 0;
-}
-}
+    Car car1; 
+    car1.checkavailability();
 
-int main(){
+    Car car2("Toyota", "Corolla", 50.0);
+    car2.checkavailability();
+    car2.rentalrequest();
+    car2.checkavailability(); 
+
     return 0;
 }
