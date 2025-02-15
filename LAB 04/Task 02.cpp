@@ -26,7 +26,7 @@ class Car{
         }
 
     void update(string newbrand,string newmodel,double newprice){
-            this->brand=newprice;
+            this->brand=newbrand;
             this->model=newmodel;
             this->price=newprice;
         }
