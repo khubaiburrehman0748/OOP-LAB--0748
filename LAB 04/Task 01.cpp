@@ -10,26 +10,17 @@ class Car{
         string model;
         double price;
         bool availability;
-        int count=0;
-    
+
     Car(){
         brand="Unknown";
         model="generic";
         price=0.0;
         availability=true;
-        count++;
     }
 
-    Car(string brand,string model,double price){
-            this->brand=brand;
-            this->model=model;
-            this->price=price;
-            availability=true;
-            count++;
-        }
 
     void update(string newbrand,string newmodel,double newprice){
-            this->brand=newprice;
+            this->brand=newbrand;
             this->model=newmodel;
             this->price=newprice;
         }
