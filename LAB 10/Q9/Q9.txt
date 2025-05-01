@@ -1,0 +1,6 @@
+2023-10-15 08:30:45 System boot completed
+2023-10-15 08:31:02 User login: admin
+2023-10-15 08:35:18 Sensor reading: 24.5C
+2023-10-15 08:40:22 Database connection established
+2023-10-15 08:45:07 Warning: CPU temp 78C
+2023-10-15 08:50:33 Backup initiated
