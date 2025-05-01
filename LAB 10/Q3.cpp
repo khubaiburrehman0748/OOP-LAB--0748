@@ -9,8 +9,7 @@ int main() {
     ifstream in("vehicles.txt");
     string line;
     
-    getline(in, line); 
-    getline(in, line); 
+    getline(in, line); //skip comment line ;) 
     
     while (getline(in, line)) {
         if (line.empty()) continue;
