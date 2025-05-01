@@ -14,8 +14,7 @@ int main() {
         return 1;
     }
 
-    getline(in, line); 
-    getline(in, line); 
+    getline(in, line); //skip comment line ;) 
     
     while (getline(in, line)) {
         if (line.empty()) continue;
